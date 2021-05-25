@@ -3,7 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-  for x in [1, 2, 3]:
-    print(x)
+    return HttpResponse('Hello Django')
 
-  return HttpResponse("Hello Django")
+def detail(request, question_id):
+    return HttpResponse('You are looking at question id %s' % question_id)
+
+def results(request, question_id):
+    return HttpResponse('You are looking at the results of question %s' % question_id)
+
+def vote(request, question_id):
+    return HttpResponse('You are voting for question %s' % question_id)
